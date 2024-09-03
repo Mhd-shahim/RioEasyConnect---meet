@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.cf59826a.css",
+    "main.js": "/static/js/main.d64475fe.js",
+    "static/js/453.bfdf247e.chunk.js": "/static/js/453.bfdf247e.chunk.js",
+    "static/media/bLite bReal logo_Blue logo.png": "/static/media/bLite bReal logo_Blue logo.9b69f0ad5bbab0996c7f.png",
+    "static/media/doctor_patient_1.avif": "/static/media/doctor_patient_1.104630dbfc2fe14c7d3a.avif",
+    "index.html": "/index.html",
+    "main.cf59826a.css.map": "/static/css/main.cf59826a.css.map",
+    "main.d64475fe.js.map": "/static/js/main.d64475fe.js.map",
+    "453.bfdf247e.chunk.js.map": "/static/js/453.bfdf247e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cf59826a.css",
+    "static/js/main.d64475fe.js"
+  ]
+}
