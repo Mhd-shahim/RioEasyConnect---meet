@@ -34,8 +34,8 @@ body{
   
 }
 .cover-img{
-  width: 500px;
-  height: 500px;
+  /* width: 500px; */
+  height: 400px;
 }
 .expired-div{
   background-color: rgb(250, 208, 208);

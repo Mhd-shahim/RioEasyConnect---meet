@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate,useParams } from 'react-router-dom';
 import {Row, Col} from "react-bootstrap"
 import doctor_patient from "../../assets/images/doctor_patient_1.avif"
+import doctor_patient1 from "../../assets/images/BLBR.png"
 import LogoName from "../../assets/images/bLite bReal logo_Blue logo.png"
 import "./Home.css"
 
@@ -97,10 +98,10 @@ const HomePage = () => {
     }
 
 
-    const consultation_time = booking_details.booking_time; 
-    // const consultation_time = "11:20"
-    const consultation_date = booking_date ? convertDateFormat(booking_date) : "";
-    // const consultation_date = "2024-08-29"
+    // const consultation_time = booking_details.booking_time; 
+    const consultation_time = "08:35"
+    // const consultation_date = booking_date ? convertDateFormat(booking_date) : "";
+    const consultation_date = "2024-09-04"
     
     const  token = booking_details.token_no;
     
@@ -275,7 +276,7 @@ const HomePage = () => {
                 </Col>
                 <Col md={6}>
                 <div className='second-div'>
-                <img src={doctor_patient} className='cover-img' alt="doctor patient"/>
+                <img src={doctor_patient1} className='cover-img me-5' alt="doctor patient"/>
                 </div>
                 </Col>
                 </Row>

@@ -78,8 +78,8 @@ const RoomPage = () => {
                 }
                 const bookings = await response.json();
                 setBooking_details(bookings);
-                sessionStorage.setItem('meet_end_time', bookings.end_time);
-                // sessionStorage.setItem('meet_end_time', "11:40")
+                // sessionStorage.setItem('meet_end_time', bookings.end_time);
+                sessionStorage.setItem('meet_end_time', "23:42")
 
             } catch (error) {
                 console.error("Error fetching booking details:", error);
@@ -207,9 +207,13 @@ const RoomPage = () => {
                 warningDelay = remainingTime - warningTime;
             }
 
-            const startCountdown = () => {
-                
-                let timeLeft = 900; // 15 minutes countdown
+            const startCountdown = (delayToCountdown, delayToEnd) => {
+                let timeLeft;
+                if(delayToCountdown < 0){
+                    timeLeft = 900 - (delayToCountdown * -1)
+                }else{
+                    timeLeft = 900; 
+                }
                 setIsWarningActive(true);
                 const intervalId = setInterval(() => {
                     timeLeft -= 1;
@@ -258,9 +262,10 @@ const RoomPage = () => {
                     const current_time = await fetchCurrentIndianTime();
                     const startCountdownAt = subtractMinutesFromTime(meet_end_time, 15)
                     const delayInTime = subtractTimes(current_time, startCountdownAt)
+                    const delayTillEnd = subtractTimes(current_time, meet_end_time)
                     // setCountdownDelay(delayInTime/1000)
                     // Set a timer to show a warning message before ending the call                    
-                    const warningTimer = setTimeout(() => startCountdown(), delayInTime);
+                    const warningTimer = setTimeout(() => startCountdown(delayInTime/1000, delayTillEnd/1000), delayInTime);
                     
                     // Set a timer to end the meeting at the specified end time
                     const endTimer = setTimeout(() => {
@@ -279,6 +284,8 @@ const RoomPage = () => {
                     });
                 },
                 
+                useFrontFacingCamera:true,
+                showMyCameraToggleButton:false,
 
                 onReturnToHomeScreenClicked: () => {
                     setViewDiv(true);
